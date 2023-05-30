@@ -7,9 +7,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/student")
-public class StudentController extends CreateStudentRequest
+public class StudentController
 {
-    StudentService stdService;
+    private final StudentService stdService;
+
+    // a constructor so that the Spring container can inject a StudentService.
+    public StudentController(StudentService stdService) {
+        this.stdService = stdService;
+    }
 
     @PostMapping("/create")
     public StudentResponse createStudent(@RequestBody CreateStudentRequest createStudentRequest)

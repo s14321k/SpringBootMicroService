@@ -6,7 +6,9 @@ import com.sarathUniversity.repository.AdressRepository;
 import com.sarathUniversity.repository.StudentRepository;
 import com.sarathUniversity.request.CreateStudentRequest;
 import com.sarathUniversity.response.StudentResponse;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StudentService
 {
     StudentRepository studentRepository;
